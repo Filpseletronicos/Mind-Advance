@@ -1,0 +1,55 @@
+/* ARQUIVO: login_responsive.css */
+
+/* --- RESPONSIVIDADE PARA TELAS MENORES (SMARTPHONES E TABLETS) --- */
+
+@media (max-width: 768px) {
+    /* Em telas médias/pequenas (tablets), podemos alargar o container */
+    .container {
+        width: 85%; /* Usa 85% da largura da tela */
+        max-width: 400px; /* Garante que não fique muito largo em tablets */
+        padding: 25px; /* Reduz um pouco o padding interno */
+    }
+
+    h1 {
+        font-size: 1.4em; /* Reduz o tamanho do título */
+        margin-bottom: 25px;
+    }
+
+    .logo {
+        width: 50px; /* Reduz um pouco o logo */
+        margin-bottom: 20px;
+    }
+
+    /* Ajuste no padding do input para telas menores */
+    .input-group input {
+        padding: 10px 15px 10px 40px; 
+    }
+}
+
+@media (max-width: 480px) {
+    /* Em telas muito pequenas (smartphones), o container deve se estender */
+    body {
+        /* Remove a centralização vertical (height: 100vh) para permitir o scroll 
+           e garantir que a página não seja cortada em dispositivos móveis. */
+        height: auto; 
+        min-height: 100vh; /* Garante que o fundo cubra toda a tela, se o conteúdo for pequeno */
+        padding: 40px 15px; /* Adiciona padding vertical e lateral para evitar que o conteúdo toque as bordas */
+        align-items: flex-start; /* Alinha o container no topo da tela, se necessário */
+    }
+
+    .container {
+        width: 100%; /* Ocupa a largura total dentro do padding do body */
+        margin: 0 auto; /* Centraliza */
+        padding: 20px;
+        box-shadow: none; /* Remove a sombra no mobile para um visual mais limpo */
+        border-radius: 0; /* Opcional: remove bordas arredondadas em modo tela cheia */
+    }
+
+    h1 {
+        font-size: 1.3em;
+    }
+
+    p, h6 {
+        font-size: 0.85em;
+    }
+}

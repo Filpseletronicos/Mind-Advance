@@ -1,0 +1,60 @@
+/* --- COMPLEMENTO DA RESPONSIVIDADE PARA O CONTEÚDO --- */
+
+/* Breakpoint para Tablets e Desktops Menores (Max-width: 992px) */
+@media (max-width: 992px) {
+    /* Ajuste de espaçamento geral */
+    .analise-e-swot-wrapper, .pestel {
+        padding: 80px 0 40px 0;
+    }
+
+    /* Reduz o tamanho dos títulos das seções */
+    .analysis-card h2, .pestel h2 {
+        font-size: 1.8rem;
+    }
+
+    /* O layout em duas colunas (analise-container) ainda funciona,
+       mas vamos garantir que os cards sejam um pouco mais flexíveis */
+    .analysis-card {
+        min-width: 45%; /* Garante que dois cards caibam bem lado a lado */
+        padding: 25px;
+    }
+}
+
+/* Breakpoint para Smartphones (Max-width: 600px) */
+@media (max-width: 600px) {
+    /* Ajustes no Header e Títulos */
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .analise-e-swot-wrapper {
+        padding-top: 80px; /* Ajuste final para o header mobile */
+    }
+
+    .analysis-card h2, .pestel h2 {
+        font-size: 1.5rem;
+    }
+    
+    .analysis-card p, .pestel p {
+        font-size: 1rem;
+    }
+    
+    /* ORGANIZAÇÃO VERTICAL DE CARDS (Análise/SWOT) */
+    /* Isso complementa a regra 'flex-direction: column;' já definida para .analise-container no 768px */
+    .analysis-card {
+        min-width: 90%; /* Ocupa quase toda a largura */
+        margin: 0 auto; /* Centraliza */
+    }
+
+    /* ORGANIZAÇÃO VERTICAL DE LINKS (Pestel) */
+    .pestel-links {
+        flex-direction: column; /* Empilha os links verticalmente */
+        align-items: center; /* Centraliza os links */
+        gap: 20px;
+    }
+
+    /* Os links do Pestel devem ter um tamanho mais padronizado */
+    .pestel img {
+        width: 80px; /* Diminui o ícone */
+    }
+}

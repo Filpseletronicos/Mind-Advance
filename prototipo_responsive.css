@@ -1,0 +1,92 @@
+/* ARQUIVO: prototipo_responsive.css */
+
+/* --- Configuração de Layout para Telas Maiores que 768px (Desktops/Tablets Paisagem) --- */
+@media (min-width: 769px) {
+    /* Centraliza o container principal em telas grandes */
+    .container {
+        max-width: 1200px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 12px; /* Adiciona bordas arredondadas ao container principal */
+    }
+}
+
+/* --- Ajustes para Tablets e Mobile Médio (481px a 768px) --- */
+@media (min-width: 481px) and (max-width: 768px) {
+    /* Força duas colunas no grid de cards em tablets para melhor aproveitamento */
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Reajusta a posição do perfil para não atrapalhar a navegação */
+    .profile {
+        top: 25px;
+        right: 20px;
+    }
+}
+
+/* --- Ajustes para Smartphones Pequenos (Max-width: 480px) --- */
+@media (max-width: 480px) {
+    /* Ajusta o container para ocupar quase toda a largura */
+    .container {
+        padding: 0 10px;
+    }
+
+    /* Reduz o tamanho do aviso inicial */
+    .aviso {
+        font-size: 0.8em;
+        padding: 5px 0;
+    }
+
+    /* O layout do header já está em coluna, vamos ajustar as fontes */
+    .logo {
+        width: 100px;
+    }
+    
+    nav {
+        margin-top: 10px;
+    }
+
+    nav a {
+        margin: 0 5px;
+        font-size: 0.85em;
+        padding: 5px;
+    }
+    
+    /* Reduz o título principal e o subtítulo */
+    h1 {
+        font-size: 2.0em;
+    }
+    .welcome-section p {
+        font-size: 1.0em;
+    }
+
+    /* Reduz o tamanho dos títulos das seções */
+    .content-section h2 {
+        font-size: 1.3em;
+        padding-left: 8px;
+    }
+    
+    /* Diminui o padding dos cards */
+    .card {
+        padding: 20px 15px;
+    }
+    
+    .card-icon {
+        font-size: 35px;
+    }
+
+    .card h3 {
+        font-size: 1.1em;
+    }
+    
+    .card button {
+        padding: 8px 20px;
+        font-size: 0.9em;
+    }
+    
+    /* Garante coluna única para telas menores */
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+}

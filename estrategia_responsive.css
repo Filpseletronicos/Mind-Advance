@@ -1,0 +1,100 @@
+/* --- INÍCIO DA RESPONSIVIDADE (MEDIA QUERIES) --- */
+
+/* Breakpoint para Tablets e Desktops Menores (Max-width: 992px) */
+@media (max-width: 992px) {
+    /* Ajuste do grid de documentos para 2 colunas */
+    .document-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    /* Diminui o padding da seção */
+    .strategy-hub {
+        padding-top: 100px; 
+    }
+}
+
+/* * Breakpoint para Smartphones e Tablets Pequenos (Max-width: 768px)
+ * Foco: Menu Mobile (Hamburguer) e Layout de Conteúdo
+ */
+@media (max-width: 768px) {
+    /* Menu Mobile (Hamburguer) */
+    
+    /* 1. Mostra o ícone de hambúrguer */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* 2. Oculta o menu principal e o posiciona para o layout mobile */
+    .nav-links {
+        display: none; /* Inicia oculto */
+        flex-direction: column; /* Organiza em coluna */
+        position: absolute;
+        top: 100%; /* Abaixo do header */
+        left: 0;
+        width: 100%;
+        background-color: var(--primary); 
+        padding: 10px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* 3. Estilo dos itens no menu mobile */
+    .nav-links li {
+        margin: 0; /* Remove margem lateral */
+        text-align: center;
+        width: 100%; 
+    }
+
+    .nav-links li a {
+        padding: 12px 15px; 
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* 4. Classe 'active' é adicionada via JS para mostrar o menu */
+    .nav-links.active {
+        display: flex;
+    }
+    
+    /* Títulos e Textos */
+    .container h2 {
+        font-size: 2.2rem; /* Título menor */
+        text-align: center;
+    }
+    
+    .intro-text {
+        font-size: 1.1rem;
+        text-align: center;
+        padding: 0 10px;
+        margin-bottom: 30px;
+    }
+
+    /* Grid de Documentos */
+    .document-grid {
+        /* Muda para 1 coluna para melhor visualização em celulares */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* Breakpoint para o menor Smartphone (Max-width: 600px) */
+@media (max-width: 600px) {
+    
+    /* Ajuste fino nos tamanhos de fonte e padding */
+    .container h2 {
+        font-size: 1.8rem;
+    }
+    
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .strategy-hub {
+        padding-top: 80px; /* Mais compacto */
+    }
+    
+    .document-card {
+        padding: 20px;
+    }
+}

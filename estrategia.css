@@ -1,0 +1,278 @@
+/* ARQUIVO: style.css */
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --accent: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --text: #333;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.75rem 0; 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+/* Estilo para agrupar imagem e texto do logo */
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.imagem_logo{
+    width: 40px; 
+    height: 40px; 
+    animation: rotacao 10s linear infinite;
+    transform-origin: center center;
+    margin-right: 10px; 
+}
+
+@keyframes rotacao{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.logo {
+    font-size: 1.5rem; 
+    font-weight: 700;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center; 
+}
+
+.nav-links li {
+    margin-left: 1.5rem; 
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    padding: 10px 0; 
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* CSS para o Dropdown :hover */
+.dropdown-item {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer; /* Adiciona um cursor de mão para indicar que é clicável */
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background-color: var(--dark);
+    list-style: none;
+    padding: 10px 0;
+    margin-top: 5px;
+    box-shadow: var(--shadow);
+    border-radius: 4px;
+    z-index: 1001;
+}
+
+.dropdown-menu li a {
+    color: white;
+    padding: 8px 15px;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-menu li a:hover {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.dropdown-item.active .dropdown-menu {
+    display: block;
+}
+
+.container h2{
+    font-size: 50px;
+    text-align: left;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--dark);
+}
+
+.intro-text{
+    font-size: 30px;
+    color: var(--dark);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: left;
+}
+
+.strategy-hub {
+    /* Valor atual deve ser em torno de 100px para compensar o header fixo. 
+       Aumente este valor para empurrar o conteúdo para baixo. */
+    padding-top: 130px; /* Aumente de 100px para 130px (exemplo) */
+    
+    /* Mantenha o espaçamento inferior, se quiser */
+    padding-bottom: 50px; 
+}
+
+.document-grid{
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; 
+    padding: 50px 0; 
+    max-width: 1200px;
+    margin: 0 auto; 
+}
+
+.document-card {
+    /* COR DE FUNDO (o tom de lilás/lavanda da imagem) */
+    background-color: #f0f0ff; /* Tom de lavanda bem claro */
+    
+    /* ESPAÇAMENTO INTERNO (PADDING) */
+    padding: 25px;
+    
+    /* BORDAS ARREDONDADAS */
+    border-radius: 8px;
+    
+    /* SOMBRA SUAVE (Cria o efeito 3D da imagem) */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+    
+    /* Adiciona uma borda fina e cinza como na imagem */
+    border: 1px solid #ddd;
+}
+
+/*
+  ESTILOS DO TÍTULO E TEXTO
+*/
+.document-card h3 {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-bottom: 10px; /* Espaçamento abaixo do título */
+    text-align: center; /* Centraliza o título, como na imagem */
+}
+
+.document-card p {
+    font-size: 0.9em;
+    color: #333;
+    margin-bottom: 20px; /* Espaçamento antes do botão */
+}
+
+/*
+  ESTILOS DO BOTÃO "Clique aqui"
+*/
+.card-link {
+    display: block; /* Faz o link ocupar toda a largura */
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none; /* Remove o sublinhado padrão */
+    color: #3498db; /* Uma cor azul (opcional, para destaque) */
+    padding: 5px; 
+}
+
+.card-link {
+    /* Estilos do Botão */
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none; 
+    
+    /* Cores e Formato */
+    background-color: var(--secondary); /* Azul para destaque */
+    color: var(--light); /* Texto branco */
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: auto; /* Empurra o botão para a parte inferior do card */
+    transition: background-color 0.3s ease; /* Efeito suave ao passar o mouse */
+    
+    /* Adicionar um ícone (usando Font Awesome que você já linkou) */
+    position: relative;
+    padding-left: 30px; /* Espaço para o ícone */
+}
+
+/* Adicionar um ícone de documento/download no botão */
+.card-link::before {
+    /* Use 'download' como um exemplo, mas você pode usar 'file-alt' ou outro */
+    content: "\f019"; /* Código Font Awesome para ícone de download */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+}
+
+.card-link:hover {
+    background-color: #2980b9; /* Um azul um pouco mais escuro no hover */
+}
+
+/* Para um melhor espaçamento da grade em telas menores (opcional) */
+@media (max-width: 900px) {
+    .document-grid {
+        /* Muda para 2 colunas em telas menores */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .document-grid {
+        /* Muda para 1 coluna em celulares */
+        grid-template-columns: 1fr;
+    }
+}

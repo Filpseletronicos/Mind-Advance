@@ -1,0 +1,177 @@
+/* ARQUIVO: responsive.css */
+
+/*
+|--------------------------------------------------------------------------
+| Breakpoint para Tablets e Desktops Menores (Max-width: 992px)
+|--------------------------------------------------------------------------
+| Ajustes que começam a ser necessários em telas de 992px ou menos.
+*/
+@media (max-width: 992px) {
+    /* Ajuste de Espaçamento no Header */
+    header {
+        padding: 0.5rem 0; /* Diminui um pouco o padding do header */
+    }
+    
+    /* Diminui o tamanho da fonte do logo */
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    /* Diminui um pouco o padding do Hero */
+    .hero {
+        padding: 6rem 0 4rem;
+    }
+
+    /* Redimensiona os passos para caberem em duas colunas */
+    .step {
+        min-width: 45%; /* Garante que caberão dois por linha */
+    }
+
+    /* Ajuste no Footer para que as seções de rodapé quebrem em duas colunas */
+    .footer-section {
+        min-width: 40%;
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Breakpoint para Smartphones e Tablets Pequenos (Max-width: 768px)
+|--------------------------------------------------------------------------
+| Mudanças mais significativas, como transformar o menu em hambúrguer.
+*/
+@media (max-width: 768px) {
+    
+    /* Configuração do Menu Mobile (Menu Hamburguer) */
+    
+    /* 1. Mostra o ícone de hambúrguer */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* 2. Oculta o menu principal e o posiciona para o layout mobile */
+    .nav-links {
+        display: none; /* Inicia oculto */
+        flex-direction: column; /* Organiza em coluna */
+        position: absolute;
+        top: 100%; /* Abaixo do header */
+        left: 0;
+        width: 100%;
+        background-color: var(--primary); /* Mesma cor do header */
+        padding: 10px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* 3. Estilo dos itens no menu mobile */
+    .nav-links li {
+        margin: 0; /* Remove margem lateral */
+        text-align: center;
+        width: 100%; /* Ocupa toda a largura */
+    }
+
+    .nav-links li a {
+        padding: 12px 15px; /* Aumenta a área clicável */
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Separador visual */
+    }
+
+    /* 4. Classe 'active' é adicionada via JS para mostrar o menu */
+    .nav-links.active {
+        display: flex;
+    }
+
+    /* 5. Ajuste do Dropdown no Mobile */
+    .dropdown-item {
+        width: 100%;
+        position: static; /* Volta para o fluxo normal */
+    }
+    
+    .dropdown-toggle {
+        justify-content: center; /* Centraliza o texto do toggle */
+    }
+
+    .dropdown-menu {
+        position: static; /* Fica no fluxo do documento, abaixo do toggle */
+        width: 100%;
+        min-width: auto;
+        padding: 0; /* Remove padding vertical */
+        margin-top: 0;
+        background-color: var(--dark);
+    }
+    
+    .dropdown-menu li a {
+        padding: 8px 30px; /* Adiciona indentação para subitens */
+        background-color: rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    /* Títulos e Textos */
+    .hero h1 {
+        font-size: 2rem; /* Diminui o título principal */
+    }
+    
+    .hero p {
+        font-size: 1rem; /* Diminui o subtítulo */
+    }
+
+    /* Seção de Passos (How it works) */
+    .steps {
+        justify-content: center;
+    }
+
+    .step {
+        min-width: 80%; /* Garante que ficará um passo por linha em telas menores */
+        max-width: 400px;
+    }
+
+    /* Seção Planos */
+    .planos-grid {
+        flex-direction: column; /* Empilha os planos verticalmente */
+        align-items: center;
+    }
+    
+    .planos1, .planos2, .planos3 {
+        max-width: 90%; /* Ocupa mais espaço horizontal */
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column; /* Empilha as seções do footer */
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-section {
+        min-width: 100%;
+        text-align: center; /* Centraliza o texto */
+    }
+    
+    .footer-section a {
+        display: inline-block; /* Altera para inline-block para centralizar links se necessário */
+        margin: 0 10px 0.5rem 10px;
+    }
+
+    .social-icons {
+        justify-content: center; /* Centraliza ícones sociais */
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| Breakpoint para o menor Smartphone (Max-width: 600px)
+|--------------------------------------------------------------------------
+*/
+@media (max-width: 600px) {
+    section, footer {
+        padding: 3rem 0; /* Diminui o padding vertical das seções */
+    }
+    
+    section h1, section h2 {
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .hero {
+        padding-top: 5rem; 
+    }
+}

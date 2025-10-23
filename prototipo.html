@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindAdvance | Dashboard</title>
+    
+    <link rel="icon" href="logo mind.png" type="image/png">
+    <link rel="shortcut icon" href="logo mind.png">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="prototipo.css">
+    <link rel="stylesheet" href="prototipo_responsive.css">
+</head>
+<body>
+    <h4 class="aviso">Essa é apenas uma página demonstrativa da nossa plataforma</h4>
+    <div class="container">
+        <header>
+            <img src="logo mind.png" alt="MindAdvance Logo" class="logo">
+            <nav role="navigation" aria-label="Navegação Principal">
+                <a href="#"><i class="fas fa-home"></i> Início</a>
+                <a href="#"><i class="fas fa-gem"></i> Meu Plano</a>
+                <a href="#"><i class="fas fa-chart-line"></i> Progresso</a>
+            </nav>
+            <div class="profile">
+                <i class="fas fa-user-circle profile-icon" title="Perfil de Usuário"></i>
+            </div>
+        </header>
+        <main>
+            <section class="welcome-section">
+                <h1>Olá!</h1>
+                <p>Continue de onde parou e venha aprender de uma maneira mais envolvente.</p>
+            </section>
+            
+            <section class="content-section continue-learning">
+                <h2><i class="fas fa-fire"></i> Continuar Aprendendo</h2>
+                <div class="cards-grid">
+                    <div class="card course-card" data-course-id="1">
+                        <i class="fas fa-temperature-high card-icon"></i>
+                        <h3>Propagação do Calor</h3>
+                        <button class="resume-button">Retomar</button>
+                    </div>
+                    <div class="card course-card" data-course-id="2">
+                        <i class="fas fa-landmark card-icon"></i>
+                        <h3>Revolução Francesa</h3>
+                        <button class="resume-button">Retomar</button>
+                    </div>
+                    <div class="card course-card" data-course-id="3">
+                        <i class="fas fa-calculator card-icon"></i>
+                        <h3>Funções Matemáticas</h3>
+                        <button class="resume-button">Retomar</button>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="content-section explore-content">
+                <h2><i class="fas fa-compass"></i> Explorar Conteúdos</h2>
+                <div class="cards-grid">
+                    <div class="card category-card" data-category="science">
+                        <i class="fas fa-flask card-icon"></i>
+                        <h3>Ciências</h3>
+                    </div>
+                    <div class="card category-card" data-category="history">
+                        <i class="fas fa-book-open card-icon"></i>
+                        <h3>História</h3>
+                    </div>
+                    <div class="card category-card" data-category="math">
+                        <i class="fas fa-square-root-alt card-icon"></i>
+                        <h3>Matemática</h3>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="prototipo.js"></script>
+</body>
+</html>

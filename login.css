@@ -1,0 +1,109 @@
+:root {
+    /* Define a color palette for easier maintenance */
+    --primary-color: #e91e63; /* A vibrant pink/magenta */
+    --primary-hover-color: #c2185b; /* Darker shade for hover */
+    --text-color: #333;
+    --background-color: #f4f7f6;
+    --border-color: #ddd;
+    --white: #fff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Slightly more modern font stack */
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: var(--white);
+    padding: 30px; /* Increased padding */
+    border-radius: 12px; /* Softer corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Deeper, softer shadow */
+    text-align: center;
+    width: 350px; /* Slightly wider */
+}
+
+.logo {
+    width: 60px; /* Slightly larger logo */
+    margin-bottom: 25px;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: var(--text-color);
+    font-size: 1.5em;
+    font-weight: 600; /* Bolder for emphasis */
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Styling for the Font Awesome icon */
+.input-icon {
+    position: absolute;
+    left: 15px; /* Pushed a little to the right */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999; /* Neutral icon color */
+    font-size: 16px;
+}
+
+.input-group input {
+    width: calc(100% - 30px); /* Adjust width for padding */
+    padding: 12px 15px 12px 45px; /* Increased vertical padding, more space for icon */
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    outline: none;
+    font-size: 1em;
+    transition: border-color 0.3s ease; /* Transition for focus */
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color); /* Highlight border on focus */
+    box-shadow: 0 0 5px rgba(233, 30, 99, 0.3); /* Subtle glow on focus */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Smooth hover and press effect */
+}
+
+button:hover {
+    background-color: var(--primary-hover-color);
+}
+
+button:active {
+    transform: scale(0.99); /* Slight press down effect */
+}
+
+p {
+    margin-top: 25px;
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-hover-color);
+    text-decoration: underline;
+}
