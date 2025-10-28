@@ -1,0 +1,67 @@
+/* --- RESPONSIVIDADE DO HEADER (MENU SANDUÍCHE) --- */
+
+@media (max-width: 768px) {
+    /* Mostra o ícone de hambúrguer */
+    .menu-toggle {
+        display: block;
+        color: white;
+    }
+
+    /* Esconde a lista de navegação por padrão */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        /* A altura do seu header é aproximadamente 60px, então ajustamos o top */
+        top: 60px; 
+        left: 0;
+        background-color: var(--primary);
+        padding: 10px 0;
+        box-shadow: var(--shadow);
+        
+        /* Ajuste de transição para o menu aparecer suavemente */
+        transition: all 0.3s ease-out;
+    }
+    
+    /* Regra para mostrar o menu quando a classe 'active' for aplicada via JavaScript */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 12px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    /* Remove a borda do último item do menu */
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+    /* Estilo para o link da página atual (Sobre) no modo mobile */
+    .nav-links li:nth-child(2) a { 
+        border-bottom: 1px solid var(--secondary); /* Mantém a borda inferior no mobile */
+    }
+
+    /* Ajuste o padding do corpo da página para compensar o header */
+    body {
+        padding-top: 60px; 
+    }
+    
+    /* Ajuste o tamanho da fonte para o título em mobile */
+    .layout-text-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+    }
+}

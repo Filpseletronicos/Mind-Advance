@@ -1,0 +1,310 @@
+/* ARQUIVO: sobre.css - COMPLETO */
+:root {
+    --primary: #2c3e50; /* Azul Escuro/Quase Preto */
+    --secondary: #3498db; /* Azul Brilhante */
+    --accent: #e74c3c; /* Vermelho/Laranja (Acento) */
+    --light: #ecf0f1; /* Cinza Claro/Fundo claro */
+    --dark: #2c3e50; /* Azul Escuro */
+    --text-dark: #333; /* Texto Padrão Escuro */
+    --text-light: #f5f5f5; /* Texto Padrão Claro */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    /* Cores personalizadas para o layout de duas colunas (inspirado na imagem) */
+    --color-section-dark: #6a6fb0; /* Cor de fundo roxo/azulado escuro */
+    --color-icon-dark-bg: #e2d2ff; /* Fundo do ícone claro na seção escura */
+    --color-icon-dark-fg: var(--primary); /* Cor do ícone escuro na seção escura */
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* Base Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding-top: 5rem; 
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header (Estilos fixos) */
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.75rem 0; 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.imagem_logo {
+    width: 40px; 
+    height: 40px; 
+    animation: rotacao 10s linear infinite;
+    transform-origin: center center;
+    margin-right: 10px; 
+}
+
+@keyframes rotacao {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.logo {
+    font-size: 1.5rem; 
+    font-weight: 700;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center; 
+}
+
+.nav-links li {
+    margin-left: 1.5rem; 
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    padding: 10px 0; 
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Estilo para a página ATUAL ("Sobre") */
+.nav-links li:nth-child(2) a { 
+    font-weight: bold;
+    color: var(--secondary) !important;
+    border-bottom: 3px solid var(--secondary);
+    padding-bottom: 5px;
+}
+
+/* ================================== */
+/* Estilos das Seções MVVP (Layout e Cores) */
+/* ================================== */
+
+section {
+    padding: 5rem 0;
+}
+
+/* Fundo Escuro (Missão e Valores) */
+.section-dark {
+    background-color: var(--color-section-dark); 
+    color: var(--text-light); /* Texto mais claro */
+}
+
+.section-dark h1, 
+.section-dark p,
+.section-dark li {
+    color: var(--text-light);
+}
+
+/* Fundo Claro (Visão e Propósito) */
+.section-light {
+    background-color: var(--light);
+    color: var(--text-dark);
+}
+
+.section-light h1,
+.section-light p {
+    color: var(--primary);
+}
+
+/* ---------------------------------- */
+/* Layout Flexbox (2 Colunas) */
+/* ---------------------------------- */
+
+.layout {
+    display: flex;
+    align-items: center; /* Centraliza os itens verticalmente */
+    gap: 3rem; /* Espaçamento entre as colunas */
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Reverte a ordem das colunas para a seção "Valores" (Ícone na direita) */
+.section-reversed .layout {
+    flex-direction: row-reverse;
+}
+
+/* ---------------------------------- */
+/* Estilo da Coluna do Ícone */
+/* ---------------------------------- */
+.layout-icon-container {
+    flex: 0 0 250px; /* Largura fixa para a coluna do ícone */
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.layout-icon {
+    font-size: 4rem; /* Tamanho grande do ícone */
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+/* Cores do ícone na Seção ESCURA */
+.section-dark .layout-icon {
+    background-color: var(--color-icon-dark-bg);
+    color: var(--color-icon-dark-fg);
+}
+
+/* Cores do ícone na Seção CLARA */
+.section-light .layout-icon {
+    background-color: var(--primary);
+    color: white;
+}
+
+.layout-icon:hover {
+    transform: scale(1.05);
+}
+
+/* ---------------------------------- */
+/* Estilo da Coluna do Texto */
+/* ---------------------------------- */
+.layout-text-content {
+    flex: 1; /* Ocupa o espaço restante */
+    text-align: left;
+}
+
+.layout-text-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    border-bottom: none; 
+    display: block;
+    padding-bottom: 0;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.layout-text-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+/* ---------------------------------- */
+/* Estilo Específico para a Lista de Valores */
+/* ---------------------------------- */
+.values-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.values-list li {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Borda clara para fundo escuro */
+}
+
+/* Ajuste a borda para seções claras */
+.section-light .values-list li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+    color: var(--text-dark);
+}
+
+.values-list li:last-child {
+    border-bottom: none;
+}
+
+.values-list li:before {
+    content: "\f058"; /* Ícone de check circle */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    color: var(--secondary);
+}
+
+/* ================================== */
+/* Responsividade */
+/* ================================== */
+
+@media (max-width: 992px) {
+    /* Em telas médias, reduza o espaçamento */
+    .layout {
+        gap: 2rem;
+    }
+    .layout-icon-container {
+        flex: 0 0 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Em telas menores, mude para layout de coluna única (Empilha) */
+    .layout,
+    .section-reversed .layout { /* Ambas as direções se tornam coluna */
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .layout-icon-container {
+        flex: none; /* Remove a largura fixa */
+    }
+
+    .layout-text-content {
+        text-align: center;
+        /* Centraliza a lista de valores (ul) no modo coluna */
+    }
+
+    .layout-text-content h1 {
+        display: inline-block; /* Permite centralizar o h1 */
+    }
+
+    .values-list {
+        display: inline-block; /* Trata a lista como bloco centralizável */
+        text-align: left; /* Mantém os itens da lista alinhados à esquerda dentro do bloco */
+    }
+}

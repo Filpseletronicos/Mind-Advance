@@ -1,0 +1,340 @@
+/* ARQUIVO: style.css */
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --accent: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --text: #333;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--light);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header */
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.75rem 0; 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+/* Estilo para agrupar imagem e texto do logo */
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.imagem_logo{
+    width: 40px; 
+    height: 40px; 
+    animation: rotacao 10s linear infinite;
+    transform-origin: center center;
+    margin-right: 10px; 
+}
+
+@keyframes rotacao{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.logo {
+    font-size: 1.5rem; 
+    font-weight: 700;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center; 
+}
+
+.nav-links li {
+    margin-left: 1.5rem; 
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    padding: 10px 0; 
+}
+
+.nav-links a:hover {
+    color: var(--secondary);
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* ARQUIVO: mercado.css - Continuação */
+
+/* Media Queries para responsividade do Header (Menu Sanduíche) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Ajuste conforme a altura do seu header */
+        left: 0;
+        background-color: var(--primary);
+        padding: 10px 0;
+        box-shadow: var(--shadow);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 10px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        color: white;
+    }
+}
+
+/* ------------------------------------------- */
+/* NOVOS ESTILOS PARA O LAYOUT DE DUAS COLUNAS */
+/* ------------------------------------------- */
+
+/* Contêiner principal para as duas colunas */
+.analise-e-swot-wrapper {
+    padding: 120px 0 60px 0; /* Padding superior para compensar o header fixo */
+    background-color: var(--light);
+}
+
+.analise-container {
+    display: flex; /* Habilita o layout lado a lado */
+    gap: 30px; /* Espaço entre as duas colunas */
+    flex-wrap: wrap; /* Permite que as colunas quebrem em telas menores */
+    align-items: stretch; /* Garante que as colunas tenham a mesma altura */
+}
+
+.analysis-card {
+    flex: 1; /* Permite que cada card ocupe espaço igual */
+    min-width: 300px; /* Garante que não fiquem muito estreitos */
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Estilos para a seção de explicação inicial */
+.analysis-card h2 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.analysis-card h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--secondary);
+    border-radius: 2px;
+}
+
+.analysis-card p {
+    font-size: 1.05rem;
+    color: var(--text);
+    margin-bottom: 20px;
+    flex-grow: 1; /* Faz o parágrafo ocupar o espaço restante */
+}
+
+/* Estilos específicos do SWOT (dentro do card) */
+.swot-card .swot-content {
+    margin-top: auto; /* Empurra o conteúdo de link para o final do card */
+}
+
+.quadro-swot {
+    display: inline-block; /* Ajusta para link inline */
+    margin: 10px auto 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.quadro-swot:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.quadro-swot img {
+    display: block;
+    width: 100px;
+    height: auto;
+}
+
+/* ------------------------------------------- */
+/* Estilos para a seção PESTEL (abaixo) */
+/* ------------------------------------------- */
+
+.pestel {
+    padding: 60px 0;
+    background-color: var(--light); /* Fundo claro para contraste com os cards */
+    text-align: center;
+}
+
+.pestel .container {
+    max-width: 800px;
+}
+
+.pestel h2 {
+    font-size: 2.2rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.pestel h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--secondary);
+    border-radius: 2px;
+}
+
+.pestel p {
+    font-size: 1.05rem;
+    color: var(--text);
+    margin-bottom: 30px;
+}
+
+.pestel-links { /* Substitui o div:last-of-type por uma classe mais clara */
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.pestel .excel a {
+    display: block;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.pestel .pdf a:hover, .pestel .excel a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pestel img {
+    display: block;
+    width: 100px;
+    height: auto;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    /* ... (Estilos de menu toggle que já foram definidos) ... */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: var(--primary);
+        box-shadow: var(--shadow);
+        padding-bottom: 10px;
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* FORÇA AS COLUNAS A FICAREM UMA EMBAIXO DA OUTRA NO MOBILE */
+    .analise-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .analise-e-swot-wrapper {
+        padding-top: 100px;
+    }
+}
